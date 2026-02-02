@@ -1,95 +1,97 @@
-# 🎯 Название проекта: python-game-characters 🎮
+# 🗡️ python-game-characters
 
-Этот проект представляет собой симулятор боя, реализованный с использованием объектно-ориентированного программирования (ООП). Он демонстрирует навыки работы с классами, наследованием, инкапсуляцией и полиморфизмом на практике.
+A small console-based Python project that demonstrates **Object-Oriented Programming (OOP)** concepts, including **abstract base classes**, **inheritance**, **polymorphism**, and simple **turn-based combat logic**.
 
-## 🔍 Цель проекта
-Создать интерактивную среду для симуляции боя между персонажами. Проект сочетает:
-- развлекательную составляющую;
-- демонстрацию принципов ООП (моделирование объектов, состояний, взаимодействий).
+The project simulates a battle between a hero and an enemy with random events such as critical hits, healing, and magical attacks.
 
-## 📋 Содержание
-- [Описание](#описание)
-- [Ключевые особенности](#ключевые-особенности)
-- [Установка](#установка)
-- [Пример работы](#пример-работы)
-- [Используемые технологии](#используемые-технологии)
-- [Структура проекта](#структура-проекта)
-- [Лицензия](#лицензия)
-- [Контакты](#контакты)
+---
 
-## 🔧 Описание проекта
+## 🚀 Features
 
-#### Симулятор боя позволяет:
+* Abstract base class for characters (`CharacterBase`)
+* Base character implementation (`Character`)
+* Role separation:
 
-+ создавать персонажей с разными характеристиками (здоровье, сила, ловкость);
-+ использовать специальные умения персонажей;
-+ отображать результаты боя (победитель, нанесённый урон, оставшееся здоровье).
+  * `Hero` — character with healing ability
+  * `Enemy` — basic enemy class
+* Hero specializations:
 
-## 🌟 Ключевые особенности
-+ **ООП**: классы, наследование, инкапсуляция.
-+ **оделирование состояний**: изменение здоровья, применение умений.
-+ **Взаимодействие объектов**: атака, защита, специальные действия.
-+ **Гибкость**: легко добавлять новых персонажей и умения.
+  * 🗡️ **Warrior** — critical hit chance (x2 damage)
+  * 🔥 **Mage** — enhanced magic attack
+* Turn-based battle loop
+* Random events using the `random` module
+* Delays between turns using `time.sleep`
+* Clean and readable console output
 
-## 🛠 Установка
+---
 
-1. **Клонируйте репозиторий**:
+## 🧠 Python Concepts Used
 
-   ```bash
-   git clone https://github.com/ShizoDDS/python-game-characters.git
+* Object-Oriented Programming (OOP)
+* `abc.ABC` and `@abstractmethod`
+* Inheritance and method overriding
+* Polymorphism
+* `super()` usage
+* Modules: `random`, `time`
 
-2. **Перейдите в директорию проекта**:
-    ```bash
-    cd python-game-characters
+---
 
-3. **Запустите**:
-    ```bash
-    python battle.py
+## 🧩 Project Structure
 
-## 🖨 Пример работы
-+ После запуска программы пользователь видит:
-  ```bash
-    --- 🔔 БОЙ НАЧИНАЕТСЯ! ---
-    Имя: Demol, Здоровье: 210, Урон: 20
-    Имя: Zombie, Здоровье: 150, Урон: 40
-    ------------------------------
-    🔥 Demol кастует Огненный Шар в Zombie!
-    💥 Zombie получил 25 урона! Осталось HP: 125
-    Zombie атакует Demol
-    💥 Demol получил 40 урона! Осталось HP: 170
-    🔥 Demol кастует Огненный Шар в Zombie!
-    💥 Zombie получил 25 урона! Осталось HP: 100
-    Zombie атакует Demol
-    💥 Demol получил 40 урона! Осталось HP: 130
-    🔥 Demol кастует Огненный Шар в Zombie!
-    💥 Zombie получил 25 урона! Осталось HP: 75
-    Zombie атакует Demol
-    💥 Demol получил 40 урона! Осталось HP: 90
-    🔥 Demol кастует Огненный Шар в Zombie!
-    💥 Zombie получил 25 урона! Осталось HP: 50
-    Zombie атакует Demol
-    💥 Demol получил 40 урона! Осталось HP: 50
-    🔥 Demol кастует Огненный Шар в Zombie!
-    💥 Zombie получил 25 урона! Осталось HP: 25
-    Zombie атакует Demol
-    💥 Demol получил 40 урона! Осталось HP: 10
-    🔥 Demol кастует Огненный Шар в Zombie!
-    💥 Zombie получил 25 урона! Осталось HP: 0
+* `CharacterBase` — abstract interface for all characters
+* `Character` — base implementation
+* `Hero` — base class for playable characters
+* `Enemy` — enemy implementation
+* `Warrior` — hero with critical damage mechanic
+* `Mage` — hero with magic damage bonus
+* Main battle loop
 
-    🏆 Demol ОДЕРЖАЛ ПОБЕДУ!
-    ------------------------------
+---
 
-## 💻 Используемые технологии
-+ **Язык программирования**: Python.
-+ **Подход**: объектно-ориентированное программирование (ООП).
+## ▶️ How to Run
 
-## Лицензия
-Проект распространяется под лицензией MIT.  
-Полный текст лицензии доступен в файле `LICENSE`.
+1. Make sure Python **3.8+** is installed
+2. Save the file as `game.py`
+3. Run the script:
 
-## 👤 Автор
-- **Имя**: Игорь
-- **Почта**: ibatrakov017@gmail.com
-- **GitHub**: https://github.com/ShizoDDS
+```bash
+python game.py
+```
 
-Спасибо за интерес к проекту! 🎯
+---
+
+## 🕹️ Gameplay Overview
+
+* The hero and the enemy attack each other in turns
+* Critical hits may occur randomly
+* The hero can heal when health is low
+* The battle ends when one character's health reaches zero
+
+---
+
+## 🎯 Project Purpose
+
+This project was created to:
+
+* Practice **clean OOP architecture** in Python
+* Demonstrate junior-level backend / logic skills
+* Serve as a **portfolio project** for freelance platforms
+
+---
+
+## 🔮 Possible Improvements
+
+* Add more character classes
+* Implement experience and leveling system
+* Add inventory and items
+* Allow player choice for actions
+* Convert the project to GUI or API-based version
+
+---
+
+## 👨‍💻 Author
+
+Junior Python Developer
+
+This project is for educational and portfolio purposes.
+
